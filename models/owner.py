@@ -1,12 +1,11 @@
-
 from datetime import datetime
-from unittest.mock import Base
-
 from sqlalchemy import Boolean, Column, DateTime, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
 
+Base = declarative_base()
 
 class Owner(Base):
-    __tablename__ = 'Owner'
+    __tablename__ = 'owners'
 
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String(50), unique=True, nullable=False)
